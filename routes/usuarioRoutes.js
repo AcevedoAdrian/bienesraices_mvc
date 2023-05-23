@@ -1,4 +1,5 @@
 import express from "express";
+import { formularioLogin } from "../controllers/usuariosController.js";
 
 const router = express.Router();
 
@@ -10,9 +11,7 @@ const router = express.Router();
 //   res.json({ msg: "Somos una empresa elite" });
 // });
 
-router.get("/login", (req, res) => {
-  res.render("auth/login", { authenticado: true });
-});
+router.get("/login", formularioLogin);
 
 // router
 //   .route("/")
