@@ -2,6 +2,7 @@ import express from "express";
 import {
   formularioLogin,
   fromularioRegistro,
+  formularioRecuperarPassword,
 } from "../controllers/usuario.controller.js";
 
 const router = express.Router();
@@ -16,6 +17,7 @@ const router = express.Router();
 
 router.get("/login", formularioLogin);
 router.get("/registro", fromularioRegistro);
+router.get("/recuperar-password", formularioRecuperarPassword);
 // router
 //   .route("/")
 //   .get(function (req, res) {

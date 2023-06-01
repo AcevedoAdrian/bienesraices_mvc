@@ -1,5 +1,28 @@
 extends ../layout/index
 
 block contenido  
-  div 
-    h2.text-center.text-2xl.font-extrabold  Crear Cuenta
+  .py-10 
+    h1.text-4xl.my-10.font-extrabold.text-center Binenes
+      span.font-normal.text-teal-600 Raices 
+    h2.text-center.text-2xl.font-extrabold=  pagina
+
+    .mt-8.mx-auto.max-w-md
+      .bg-white.py-8.px-4.shadow
+        form.space-y-5
+          div
+            label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for=nombre) Tu Nombre
+            input#nombre.w-full.px-3.py-2.border.border-gray-500.rounded-md.placeholder-gray-400(type="text" name="nombre" placeholder="Tu Nombre")
+          div
+            label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for=email) Email de Registro
+            input#nombre.w-full.px-3.py-2.border.border-gray-500.rounded-md.placeholder-gray-400(type="email" name="email" placeholder="Tu Email")
+          div
+            label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for=password) Password
+            input#nombre.w-full.px-3.py-2.border.border-gray-500.rounded-md.placeholder-gray-400(type="password" name="password" placeholder="Tu Password")
+          div
+            label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for=repite_password) Repite tu Password
+            input#nombre.w-full.px-3.py-2.border.border-gray-500.rounded-md.placeholder-gray-400(type="password" name="repite_password" placeholder="Repite tu Password")
+          .flex.item-center.justify-between 
+            a.text-gray-500.text-xs(href="/auth/login") Iniciar Sesión
+            a.text-gray-500.text-xs(href="/auth/recuperar-password") Recuperar Password
+          
+          input.w-full.bg-teal-600.text-white.font-bold.py-3.cursor-pointer(class="hover:bg-teal-700" type="submit" value="Crear Cuenta")
