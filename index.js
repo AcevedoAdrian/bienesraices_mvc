@@ -1,9 +1,17 @@
 import express from "express";
 // Importamos con la extencion del archivo
 import usuarioRoutes from "./routes/usuario.routes.js";
+import db from "./config/db.js";
 
 // Crear la app
 const app = express();
+
+try {
+  await db.authenticate();
+  console.log("DB CONECTADA");
+} catch (error) {
+  console.log(error);
+}
 
 // Habilitar Pug
 app.set("view engine", "pug"); // Le decimos con que tipo detemplateing vamos a usar
