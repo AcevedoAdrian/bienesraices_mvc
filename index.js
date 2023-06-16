@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 // Conexion a la base de datos
 try {
   await db.authenticate();
+  // Crea las tablas si no existen
   db.sync();
   console.log("DB CONECTADA");
 } catch (error) {
