@@ -18,7 +18,7 @@ const Usuario = db.define(
       allowNull: false,
     },
     token: DataTypes.STRING,
-    comfirmado: DataTypes.BOOLEAN,
+    confirmado: DataTypes.BOOLEAN,
   },
   {
     // Hook de squelize

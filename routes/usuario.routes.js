@@ -1,9 +1,14 @@
 import express from "express";
 import {
   formularioLogin,
+  autenticar,
   fromularioRegistro,
-  formularioRecuperarPassword,
   registrar,
+  confirmar,
+  formularioRecuperarPassword,
+  resetPassword,
+  comprobarToken,
+  nuevoPassword,
 } from "../controllers/usuario.controller.js";
 
 const router = express.Router();
@@ -17,9 +22,19 @@ const router = express.Router();
 // });
 
 router.get("/login", formularioLogin);
+router.post("/login", autenticar);
+
 router.get("/registro", fromularioRegistro);
 router.post("/registro", registrar);
+router.get("/confirmar/:token", confirmar);
+
 router.get("/recuperar-password", formularioRecuperarPassword);
+router.post("/recuperar-password", resetPassword);
+
+router.get("/olvide-password/:token", comprobarToken);
+router.post("/olvide-password/:token", nuevoPassword);
+
+// Almacena el nuevo password
 // router
 //   .route("/")
 //   .get(function (req, res) {

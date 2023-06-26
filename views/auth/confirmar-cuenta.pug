@@ -1,0 +1,15 @@
+extends ../layout/index
+
+block contenido  
+  .py-10 
+    h1.text-4xl.my-10.font-extrabold.text-center Binenes
+      span.font-normal.text-teal-600 Raices 
+    h2.text-center.text-2xl.font-extrabold=  pagina
+
+  div(class="bg-white shadow py-8 px-4 max-w-md mx-auto")
+    //- p(class=(error ? "bg-red-500": "bg-green-500")).shadow.font-bold.uppercase.text-center.text-white.py-2.px-5.roudend-lg.w-full= mensaje
+    p(class=`${error ? "bg-red-600": "bg-green-600" } shadow font-bold uppercase text-center text-white py-2 px-5 roudend-lg w-full`)= mensaje
+    
+     
+    if !error
+      a(href="/auth/login" class="text-center font-bold text-xs text-slate-500 uppercase mt-10 block") Ya Puedes Iniciar Sesion
